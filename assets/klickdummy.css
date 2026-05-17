@@ -601,6 +601,13 @@ button.kd-button {
   resize: vertical;
 }
 
+.kd-form-note {
+  margin: 2px 0 18px;
+  color: var(--kd-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 .kd-form-status {
   display: none;
   margin-top: 14px;

@@ -207,6 +207,39 @@ function form(kind) {
   `;
 }
 
+function schnupperRequestForm() {
+  return `
+    <form class="kd-form" data-demo-form>
+      <label>Name Erziehungsberechtigte
+        <input name="guardian-name" autocomplete="name" required>
+      </label>
+      <label>Name Kind
+        <input name="child-name" autocomplete="off" required>
+      </label>
+      <label>Geburtsdatum Kind
+        <input type="date" name="child-birthdate" required>
+      </label>
+      <label>Nachricht
+        <textarea name="message" placeholder="Gibt es etwas, das wir vor dem ersten Schnuppertermin wissen sollten?"></textarea>
+      </label>
+      <label>Sicherheitsüberprüfung
+        <input
+          name="security-check"
+          autocomplete="off"
+          inputmode="text"
+          pattern="[Pp][Ff][Aa][Dd]"
+          placeholder="Bitte PFAD eingeben"
+          title="Bitte geben Sie PFAD ein."
+          required
+        >
+      </label>
+      <p class="kd-form-note">Pflichtfelder helfen uns, die passende Stufe und einen guten ersten Termin vorzubereiten.</p>
+      <button class="kd-button primary" type="submit">Schnupperanfrage senden</button>
+      <p class="kd-form-status" role="status">Danke, die Schnupperanfrage wurde im Klickdummy erfolgreich ausgelöst.</p>
+    </form>
+  `;
+}
+
 function defaultSidebar() {
   return sidebarSections(
     widget("Schnellkontakt", [
@@ -278,15 +311,8 @@ const pages = {
     subtitle: "Unverbindlich schnuppern, passende Stufe finden und entspannt starten.",
     content: () => `
       <section class="kd-section">
-        <h2>Schnuppern in vier Schritten</h2>
-        <div class="kd-grid">
-          ${["Anfrage senden", "Passende Altersgruppe klären", "Heimstunde besuchen", "Gemeinsam entscheiden"].map((step, index) => `
-            <article class="kd-box soft">
-              <h3>${index + 1}. ${step}</h3>
-              <p>Der Ablauf ist für Eltern transparent und ohne Verpflichtung gestaltet.</p>
-            </article>
-          `).join("")}
-        </div>
+        <h2>Schnupperanfrage</h2>
+        ${schnupperRequestForm()}
       </section>
       <section class="kd-section">
         <h2>Welche Stufe passt?</h2>
@@ -302,10 +328,6 @@ const pages = {
           <h3>Was zum Schnuppern mitbringen?</h3>
           <p>Bequeme Kleidung, Trinkflasche und Freude am Ausprobieren reichen für den ersten Termin.</p>
         </article>
-      </section>
-      <section class="kd-section">
-        <h2>Schnupperanfrage</h2>
-        ${form("schnuppern")}
       </section>
     `,
     sidebar: () => sidebarSections(widget("Häufige Fragen", [
