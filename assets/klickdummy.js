@@ -230,7 +230,7 @@ function defaultSidebar() {
 const pages = {
   "/": {
     title: "Pfadfindergruppe Weidling",
-    subtitle: "Gemeinschaft, Natur und Abenteuer für Kinder und Jugendliche in Klosterneuburg-Weidling.",
+    subtitle: "Gemeinschaft, Natur und das Abenteuer des Lebens für Kinder und Jugentliche in Klosterneuburg Weidling",
     content: () => `
       <section class="kd-section kd-hero">
         ${heroSlider()}
