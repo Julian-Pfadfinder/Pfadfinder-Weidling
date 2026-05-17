@@ -778,6 +778,7 @@ button.kd-button {
     top: 0;
     right: 0;
     left: 0;
+    height: var(--kd-desktop-header-height);
     z-index: 8;
     background: transparent;
     border: 0;
@@ -786,9 +787,11 @@ button.kd-button {
   }
 
   .header-inner {
-    min-height: 0;
+    min-height: var(--kd-desktop-header-height);
+    align-items: flex-end;
     justify-content: flex-end;
-    padding-top: 18px;
+    padding-top: 0;
+    padding-bottom: 4px;
     pointer-events: none;
   }
 
@@ -821,7 +824,7 @@ button.kd-button {
     right: 0;
     left: 0;
     z-index: 7;
-    padding: 54px 0 24px;
+    padding: 38px 0 48px;
     background:
       linear-gradient(165deg, rgba(136, 17, 28, 0.99), rgba(103, 10, 20, 0.97)),
       var(--kd-ci-red);
