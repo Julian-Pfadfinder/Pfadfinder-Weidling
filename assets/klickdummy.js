@@ -26,29 +26,54 @@ const FEATURED_EVENT = {
 
 const HERO_SLIDES = [
   {
-    src: FEATURED_EVENT.heroImage,
-    alt: "Nikolaus-Aktion der Pfadfinder Weidling",
-    eyebrow: "Kommendes Event",
-    title: FEATURED_EVENT.title,
-    text: `${FEATURED_EVENT.dates} · ${FEATURED_EVENT.place}`,
-    href: FEATURED_EVENT.route,
-    buttonLabel: "Mehr erfahren"
+    src: "assets/images/home-hero/hero-01.jpg",
+    alt: "Pfadfindergruppe Weidling mit Gruppenfahne am Gipfelkreuz",
+    eyebrow: "Pfadfinder in Weidling",
+    title: "Gemeinschaft, Natur und Abenteuer",
+    text: "Für Kinder und Jugendliche von 5 bis 21 Jahren in Klosterneuburg-Weidling.",
+    href: "#/mitmachen",
+    buttonLabel: "Schnuppern anfragen",
+    position: "center 48%"
   },
   {
-    src: "assets/images/event-ducks-wide.jpg",
-    alt: "Pfadfindergruppe beim Entenrennen in Weidling"
+    src: "assets/images/home-hero/hero-02.jpg",
+    alt: "Pfadfinderkinder bei einer gemeinsamen Aktion am Berg bei Sonnenuntergang",
+    position: "center 56%"
   },
   {
-    src: "assets/images/hero-water.jpg",
-    alt: "Kinder und Familien bei einer Pfadfinderaktion am Wasser"
+    src: "assets/images/home-hero/hero-03.jpg",
+    alt: "Schwarzzelt der Pfadfindergruppe Weidling mit Gruppenlogo",
+    position: "center 56%"
   },
   {
-    src: "assets/images/winter.jpg",
-    alt: "Pfadfinderkinder bei einer Winteraktivitaet im Schnee"
+    src: "assets/images/home-hero/hero-04.jpg",
+    alt: "Schwarzzelt der Pfadfindergruppe Weidling auf einer Wiese",
+    position: "center 56%"
   },
   {
-    src: "assets/images/creative.jpg",
-    alt: "Kinder bei einer kreativen Aktion der Pfadfinder"
+    src: "assets/images/home-hero/hero-05.jpg",
+    alt: "Pfadfinderinnen und Pfadfinder zwischen Zelten auf einem Lagerplatz",
+    position: "center 62%"
+  },
+  {
+    src: "assets/images/home-hero/hero-06.jpg",
+    alt: "Leiterinnen und Leiter der Pfadfindergruppe Weidling bei einer Runde im Freien",
+    position: "center 60%"
+  },
+  {
+    src: "assets/images/home-hero/hero-07.jpg",
+    alt: "Lagerplatz der Pfadfinder bei Sonnenuntergang im Wald",
+    position: "center 66%"
+  },
+  {
+    src: "assets/images/home-hero/hero-08.jpg",
+    alt: "Pfadfinderzelt mit grüner Fahne auf einem Lagerplatz",
+    position: "center 62%"
+  },
+  {
+    src: "assets/images/home-hero/hero-09.jpg",
+    alt: "Pfadfinderteam der Gruppe Weidling bei einer Bergtour am Gipfelkreuz",
+    position: "center 46%"
   }
 ];
 
@@ -155,7 +180,7 @@ function heroSlider() {
     <div class="kd-hero-slider" data-hero-slider>
       ${HERO_SLIDES.map((slide, index) => `
         <figure class="kd-hero-slide ${slide.title ? "has-caption" : ""} ${index === 0 ? "is-active" : ""}" data-hero-slide aria-hidden="${index === 0 ? "false" : "true"}">
-          <img class="kd-hero-image" src="${slide.src}" alt="${slide.alt}">
+          <img class="kd-hero-image" src="${slide.src}" alt="${slide.alt}" ${slide.position ? `style="object-position: ${slide.position};"` : ""} loading="${index === 0 ? "eager" : "lazy"}" ${index === 0 ? `fetchpriority="high"` : ""} decoding="async">
           ${slide.title ? `
             <figcaption class="kd-hero-caption">
               ${slide.eyebrow ? `<p class="kd-overline">${slide.eyebrow}</p>` : ""}
