@@ -83,6 +83,7 @@ const contacts = [
 ];
 
 let heroSliderTimer = null;
+let headerScrollTicking = false;
 
 function stageRows() {
   return stages.map(stage => [
@@ -748,8 +749,10 @@ function render() {
   document.getElementById("sidebar-content").innerHTML = page.sidebar ? page.sidebar() : defaultSidebar();
   setActiveNav(current);
   bindDynamicControls();
+  closeNav();
   document.getElementById("main").focus({ preventScroll: true });
   window.scrollTo({ top: 0, behavior: "auto" });
+  updateHeaderState();
 }
 
 function bindDynamicControls() {
@@ -833,6 +836,27 @@ function restartHeroSlider(slider, totalSlides) {
 
 const menuButton = document.querySelector(".mobile-menu-toggle");
 const nav = document.getElementById("site-navigation");
+const compactThreshold = 24;
+
+function closeNav() {
+  nav.classList.remove("is-open");
+  menuButton.setAttribute("aria-expanded", "false");
+}
+
+function updateHeaderState() {
+  const isCompact = window.scrollY > compactThreshold;
+  document.body.classList.toggle("is-header-compact", isCompact);
+  if (!isCompact) closeNav();
+}
+
+function handleHeaderScroll() {
+  if (headerScrollTicking) return;
+  headerScrollTicking = true;
+  window.requestAnimationFrame(() => {
+    updateHeaderState();
+    headerScrollTicking = false;
+  });
+}
 
 menuButton.addEventListener("click", () => {
   const isOpen = nav.classList.toggle("is-open");
@@ -841,10 +865,12 @@ menuButton.addEventListener("click", () => {
 
 nav.addEventListener("click", event => {
   if (event.target.matches("a")) {
-    nav.classList.remove("is-open");
-    menuButton.setAttribute("aria-expanded", "false");
+    closeNav();
   }
 });
 
+window.addEventListener("scroll", handleHeaderScroll, { passive: true });
+window.addEventListener("resize", updateHeaderState);
 window.addEventListener("hashchange", render);
+updateHeaderState();
 render();
