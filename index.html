@@ -9,17 +9,13 @@
     <title>Pfadfinder Weidling - Klickdummy</title>
     <link rel="icon" href="assets/images/favicon-192.png">
     <link rel="stylesheet" href="assets/oceanwp-style.min.css">
-    <link rel="stylesheet" href="assets/klickdummy.css?v=20260517-mobile-header">
+    <link rel="stylesheet" href="assets/klickdummy.css?v=20260517-mobile-fixed-header">
   </head>
   <body>
     <a class="skip-link screen-reader-text" href="#content">Zum Inhalt springen</a>
 
     <header id="site-header" class="site-header" role="banner">
       <div class="container header-inner">
-        <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
-          Menu
-        </button>
-
         <nav id="site-navigation" class="main-navigation" aria-label="Hauptnavigation">
           <a href="#/">Home</a>
           <a href="#/mitmachen">Mitmachen</a>
@@ -42,7 +38,18 @@
           >
         </a>
         <div class="page-header-copy">
-          <h1 id="page-title" class="page-header-title"></h1>
+          <div class="page-header-heading-row">
+            <h1 id="page-title" class="page-header-title"></h1>
+            <button
+              class="mobile-menu-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="site-navigation"
+              aria-label="Menü öffnen"
+            >
+              <span class="screen-reader-text">Menü</span>
+            </button>
+          </div>
           <p id="page-subtitle" class="page-header-subtitle"></p>
         </div>
       </div>
@@ -75,6 +82,6 @@
       </div>
     </footer>
 
-    <script src="assets/klickdummy.js?v=20260516-github-pages" defer></script>
+    <script src="assets/klickdummy.js?v=20260517-mobile-fixed-header" defer></script>
   </body>
 </html>
