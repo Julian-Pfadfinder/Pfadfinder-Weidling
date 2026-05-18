@@ -26,14 +26,14 @@ const FEATURED_EVENT = {
 
 const HERO_SLIDES = [
   {
-    src: "assets/images/home-hero/hero-01.jpg",
-    alt: "Pfadfindergruppe Weidling mit Gruppenfahne am Gipfelkreuz",
+    src: "assets/images/home-hero/hero-08.jpg",
+    alt: "Pfadfinderzelt mit grüner Fahne auf einem Lagerplatz",
     eyebrow: "Pfadfinder in Weidling",
     title: "Gemeinschaft, Natur und Abenteuer",
     text: "Für Kinder und Jugendliche von 5 bis 21 Jahren in Klosterneuburg-Weidling.",
     href: "#/mitmachen",
     buttonLabel: "Schnuppern anfragen",
-    position: "center 48%"
+    position: "center 62%"
   },
   {
     src: "assets/images/home-hero/hero-02.jpg",
@@ -66,9 +66,9 @@ const HERO_SLIDES = [
     position: "center 66%"
   },
   {
-    src: "assets/images/home-hero/hero-08.jpg",
-    alt: "Pfadfinderzelt mit grüner Fahne auf einem Lagerplatz",
-    position: "center 62%"
+    src: "assets/images/home-hero/hero-01.jpg",
+    alt: "Pfadfindergruppe Weidling mit Gruppenfahne am Gipfelkreuz",
+    position: "center 48%"
   },
   {
     src: "assets/images/home-hero/hero-09.jpg",
