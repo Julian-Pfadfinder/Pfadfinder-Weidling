@@ -33,7 +33,8 @@ const HERO_SLIDES = [
     text: "Für Kinder und Jugendliche von 5 bis 21 Jahren in Klosterneuburg-Weidling.",
     href: "#/mitmachen",
     buttonLabel: "Schnuppern anfragen",
-    position: "center 62%"
+    position: "center 62%",
+    captionClass: "kd-hero-caption--intro"
   },
   {
     src: "assets/images/home-hero/hero-02.jpg",
@@ -182,7 +183,7 @@ function heroSlider() {
         <figure class="kd-hero-slide ${slide.title ? "has-caption" : ""} ${index === 0 ? "is-active" : ""}" data-hero-slide aria-hidden="${index === 0 ? "false" : "true"}">
           <img class="kd-hero-image" src="${slide.src}" alt="${slide.alt}" ${slide.position ? `style="object-position: ${slide.position};"` : ""} loading="${index === 0 ? "eager" : "lazy"}" ${index === 0 ? `fetchpriority="high"` : ""} decoding="async">
           ${slide.title ? `
-            <figcaption class="kd-hero-caption">
+            <figcaption class="kd-hero-caption ${slide.captionClass || ""}">
               ${slide.eyebrow ? `<p class="kd-overline">${slide.eyebrow}</p>` : ""}
               <h3>${slide.title}</h3>
               ${slide.text ? `<p>${slide.text}</p>` : ""}

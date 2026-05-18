@@ -438,6 +438,30 @@ p {
   min-width: 160px;
 }
 
+.kd-hero-caption--intro {
+  top: 18px;
+  bottom: auto;
+  left: 18px;
+  width: min(320px, calc(100% - 92px));
+  padding: 14px 16px;
+}
+
+.kd-hero-caption--intro h3 {
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+
+.kd-hero-caption--intro p {
+  margin-bottom: 12px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.kd-hero-caption--intro .kd-button {
+  min-width: 0;
+  padding: 11px 16px;
+}
+
 .kd-image {
   height: 210px;
 }
@@ -1295,8 +1319,22 @@ button.kd-button {
     padding: 16px 18px;
   }
 
+  .kd-hero-caption--intro {
+    top: 14px;
+    right: auto;
+    bottom: auto;
+    left: 14px;
+    width: min(280px, calc(100% - 30px));
+    padding: 12px 14px;
+  }
+
   .kd-hero-caption h3 {
     font-size: 22px;
+  }
+
+  .kd-hero-caption--intro h3 {
+    font-size: 19px;
+    margin-bottom: 6px;
   }
 
   .footer-inner {
@@ -1408,15 +1446,35 @@ button.kd-button {
     padding: 14px 14px 12px;
   }
 
+  .kd-hero-caption--intro {
+    top: 10px;
+    right: auto;
+    bottom: auto;
+    left: 10px;
+    width: min(240px, calc(100% - 20px));
+    padding: 10px 12px;
+  }
+
   .kd-hero-caption h3 {
     font-size: 18px;
     margin-bottom: 8px;
+  }
+
+  .kd-hero-caption--intro h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
   }
 
   .kd-hero-caption p {
     margin-bottom: 10px;
     font-size: 14px;
     line-height: 1.45;
+  }
+
+  .kd-hero-caption--intro p {
+    margin-bottom: 8px;
+    font-size: 13px;
+    line-height: 1.38;
   }
 
   .kd-event-meta span {
