@@ -297,7 +297,7 @@ const pages = {
       </section>
       <section class="kd-section">
         <h2>Willkommen bei den Pfadfindern in Weidling</h2>
-        <p class="kd-lead">Die Startseite beantwortet die wichtigsten Fragen neuer Familien sofort: Wer wir sind, wo wir aktiv sind, welche Altersgruppen es gibt, wann die Heimstunden stattfinden und wie ein Kind unverbindlich schnuppern kann.</p>
+        <p class="kd-lead">Willkommen bei den Pfadfindern Weidling!<br>Entdecke, wer wir sind, welche Stufe zu deinem Kind passt und wann wir uns treffen.<br>Vereinbare einen Schnuppertermin oder besuche uns bei unserem nächsten Event!</p>
         ${actions([
           { label: "Schnuppertermin anfragen", href: "#/mitmachen", primary: true },
           { label: "Heimstunden ansehen", href: "#/altersgruppen" },
